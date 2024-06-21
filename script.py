@@ -90,7 +90,7 @@ while (True):
             cv2.rectangle(frame, (l, t), (l + w, t + h), (0, 255, 0), 2)
             if len(m) >1: m.pop(0)
             m.append({"l":l, "t": t, "w":w, "h":h, "size": a})
-    if len(m)==0 or len(m)==1:
+    if len(m)==0 or len(m)==1 or len(m)>2:
         if time.time()-t12 > 0.5:
             ser.write("1 1".encode())
             t12 = time.time()
