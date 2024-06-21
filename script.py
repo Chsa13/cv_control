@@ -94,7 +94,7 @@ while (True):
             m.append({"l": l, "t": t, "w": w, "h": h, "size": a})
     if len(m) == 0 or len(m) == 1 or len(m)>2:
         if time.time() - t12 > 0.5:
-            ser.write("1 1".encode())
+            ser.write(f"{1} {1}\n".encode())
             t12 = time.time()
     if len(m) == 2:
         l1 = m[0]["l"] + round(m[0]["w"] / 2)
@@ -133,7 +133,6 @@ while (True):
                 rwheel1 = rwheel
                 lwheel1 = lwheel
                 if (not rwheel == 0 and not lwheel == 0): ser.write(f"{round(lwheel)} {round(rwheel)}\n".encode())
-                # ser.write((str(round(lwheel))+ " "+str(round(rwheel))).encode())
             t122 = time.time()
 
         cv2.putText(frame, str(round(u)) + "deg", (l1 + 40, t1 - 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2,
