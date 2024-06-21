@@ -90,14 +90,10 @@ while (True):
             cv2.rectangle(frame, (l, t), (l + w, t + h), (0, 255, 0), 2)
             if len(m) >1: m.pop(0)
             m.append({"l":l, "t": t, "w":w, "h":h, "size": a})
-    if len(m)==0:
+    if len(m)==0 or len(m)==1:
         if time.time()-t12 > 0.5:
             ser.write("1 1".encode())
             t12 = time.time()
-    if len(m)==1:
-        l1 = m[0]["l"] + round(m[0]["w"] / 2)
-        t1 = m[0]["t"] + round(m[0]["h"] / 2)
-        sh = frame.shape
     if len(m) == 2:
         l1 = m[0]["l"] + round(m[0]["w"] / 2)
         t1 = m[0]["t"] + round(m[0]["h"] / 2)
