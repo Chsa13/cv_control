@@ -125,7 +125,7 @@ while (True):
         if u > 90:
             rwheel -= ((1.5 * speed / 3) / 180) * u
         elif u < 90:
-            lwheel -= ((1.5 * speed / 3) / 90) * (90 - u)
+            lwheel -= ((1.5 * speed / 3) / 90) * u
 
         if (time.time()) - t122 > 0.4:
             if abs((lwheel - lwheel1) > 5 or abs(rwheel - rwheel1) > 5):
